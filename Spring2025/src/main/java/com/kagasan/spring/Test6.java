@@ -1,18 +1,15 @@
 package com.kagasan.spring;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import javax.security.auth.login.AccountLockedException;
-
-public class Test5 {
+public class Test6 {
     public static void main(String[] args) {
-        var context =
+        AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(MyConfig.class);
 
         Person person = context.getBean("personBean", Person.class);
-        person.callYourPet();
-
+        System.out.println(person.getSurname());
+        System.out.println(person.getAge());
         context.close();
     }
 }
